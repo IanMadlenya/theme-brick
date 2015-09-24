@@ -52,7 +52,6 @@ return [
         'html_class' => '',
         'sidebar_first' => false,
         'hero_image' => '',
-        'hero_viewport' => '',
         'hero_contrast' => '',
         'navbar_transparent' => ''
 
@@ -123,21 +122,11 @@ return [
                 'animation' => 'uk-animation-slide-top'
             ];
 
-            if ($event['hero_viewport']) {
-                $classes['hero'] = 'tm-hero-height';
-            }
-
             // Sticky overlay navbar if hero position exists
             if ($event['navbar_transparent'] && $view->position()->exists('hero') && $event['hero_image']) {
 
                 $sticky['top'] = '.uk-sticky-placeholder + *';
                 $classes['navbar'] .= ' tm-navbar-overlay tm-navbar-transparent';
-
-                if ($event['hero_viewport']) {
-                    $classes['hero'] = 'uk-height-viewport';
-                } else {
-                    $classes['hero'] = 'tm-hero-padding';
-                }
 
                 if ($event['hero_contrast']) {
 

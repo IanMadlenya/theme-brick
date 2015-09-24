@@ -3,6 +3,9 @@
 @icon-font-path: "../../../../../app/assets/uikit/fonts";
 @global-image-path: '../../less/uikit/images';
 
+@base-body-background: #f0f0f0;
+
+
 /* ========================================================================
    Theme
  ========================================================================== */
@@ -14,6 +17,18 @@
  */
 
 html { overflow-y: scroll; }
+
+
+/* Container
+ ========================================================================== */
+
+.tm-container {
+    position: relative;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background: @global-background;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
 
 
 /* Navbar
@@ -90,10 +105,6 @@ html { overflow-y: scroll; }
 
 /* Blocks
  ========================================================================== */
-
-.tm-hero-height { min-height: ~"calc(100vh - 81px)"; }
-
-.tm-hero-padding > * { padding-top: 81px; }
 
 /*
  * Footer

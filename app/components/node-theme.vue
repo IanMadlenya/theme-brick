@@ -41,9 +41,6 @@
             <label class="uk-form-label">{{ 'Hero Image' | trans }}</label>
             <div class="uk-form-controls uk-form-controls-text">
                 <p class="uk-form-controls-condensed">
-                    <label><input type="checkbox" v-model="node.theme.hero_viewport"> {{ 'Full viewport height' | trans }}</label>
-                </p>
-                <p class="uk-form-controls-condensed">
                     <label><input type="checkbox" v-model="node.theme.hero_contrast"> {{ 'Invert colors' | trans }}</label>
                 </p>
                 <p class="uk-form-controls-condensed uk-margin-bottom">
