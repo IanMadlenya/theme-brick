@@ -24,10 +24,29 @@ html { overflow-y: scroll; }
 
 .tm-container {
     position: relative;
-    margin-top: 100px;
-    margin-bottom: 100px;
     background: @global-background;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Phone landscape and bigger */
+@media (min-width: @breakpoint-small) {
+
+    .tm-container {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+}
+
+/* Desktop and bigger */
+@media (min-width: @breakpoint-large) {
+
+    .tm-container {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
 }
 
 

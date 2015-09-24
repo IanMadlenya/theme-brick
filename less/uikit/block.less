@@ -20,7 +20,10 @@
 // Component
 // ========================================================================
 
-.hook-block() {}
+.hook-block() {
+    padding-left: 15px;
+    padding-right: 15px;
+}
 
 
 // Color modifier
@@ -39,6 +42,26 @@
 // ========================================================================
 
 .hook-block-misc() {
+
+    /* Phone landscape and bigger */
+    @media (min-width: @breakpoint-small) {
+
+        .uk-block {
+            padding-left: @global-grid-gutter;
+            padding-right: @global-grid-gutter;
+        }
+
+    }
+
+    /* Large screen and bigger */
+    @media (min-width: @breakpoint-xlarge) {
+
+        .uk-block {
+            padding-left: @global-grid-gutter-large;
+            padding-right: @global-grid-gutter-large;
+        }
+
+    }
 
     /*
      * Adjust padding between equal colored blocks
