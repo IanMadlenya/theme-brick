@@ -1,0 +1,18 @@
+{
+    "name": "pagekit/theme-fjord",
+    "type": "pagekit-theme",
+    "version": "0.9.0",
+    "title": "Fjord",
+    "description": "A great theme to get your business started.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pagekit",
+            "email": "info@pagekit.com",
+            "homepage": "http://pagekit.com"
+        }
+    ],
+    "extra": {
+        "image": "image.jpg"
+    }
+}
