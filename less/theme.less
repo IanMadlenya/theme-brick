@@ -129,12 +129,18 @@ html { overflow-y: scroll; }
  * Footer
  */
 
+.tm-footer {
+    padding: 0 (2 * @navbar-nav-padding-horizontal);
+    background-color: @block-secondary-background;
+}
+
+
 /* Phone landscape and bigger */
 @media (min-width: @breakpoint-medium) {
 
     .tm-footer {
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding-top: 40px;
+        padding-bottom: 40px;
     }
 
 }
