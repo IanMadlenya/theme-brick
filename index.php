@@ -4,18 +4,6 @@ return [
 
     'name' => 'theme-fjord',
 
-    'type' => 'theme',
-
-    /**
-     * Resources
-     */
-    'resources' => [
-
-        'theme:' => '',
-        'views:' => 'views'
-
-    ],
-
     /**
      * Menu positions
      */
