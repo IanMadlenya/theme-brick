@@ -19,7 +19,7 @@
 @table-condensed-padding-vertical:              10px;
 @table-condensed-padding-horizontal:            12px;
 
-@table-hover-background:                        #ffffdd;
+@table-hover-background:                        #fafafa;
 
 //
 // New
@@ -69,5 +69,7 @@
         -webkit-transition: background-color 0.05s linear;
         transition: background-color 0.05s linear;
     }
+
+    .uk-table-striped tbody tr:nth-of-type(odd):hover { background-color: darken(@table-hover-background, 2%); }
 
 }

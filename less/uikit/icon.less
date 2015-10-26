@@ -7,15 +7,18 @@
 // Variables
 // ========================================================================
 
+@icon-small-font-size:                          20px;
+
 @icon-hover-color:                              @global-muted-color;
 @icon-hover-hover-color:                        @global-dark-color;
 
+@icon-button-width:                             48px;
 @icon-button-height:                            @icon-button-width;
-@icon-button-background:                        @global-primary-background;
-@icon-button-font-size:                         round((@icon-button-width * 0.5));
-@icon-button-color:                             @global-contrast-color;
+@icon-button-background:                        transparent;
+@icon-button-font-size:                         20px;
+@icon-button-color:                             @global-color;
 
-@icon-button-hover-background:                  @global-primary-hover-background;
+@icon-button-hover-background:                  #333333;
 @icon-button-hover-color:                       @global-contrast-color;
 
 @icon-button-active-background:                 @global-primary-active-background;
@@ -26,8 +29,7 @@
 // ========================================================================
 
 .hook-icon-hover() {
-	-webkit-transition: color 0.05s linear;
-    transition: color 0.05s linear;
+
 }
 
 .hook-icon-hover-hover() {}
@@ -36,16 +38,24 @@
 // Modifier: `uk-icon-button`
 // ========================================================================
 
-.hook-icon-button() {}
+.hook-icon-button() {
+    border: 1px solid @global-border;
+    line-height: (@icon-button-height - 2);
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+}
 
 // Hover
-.hook-icon-button-hover() {}
+.hook-icon-button-hover() { border-color: #333333; }
 
 // Active
-.hook-icon-button-active() {}
-
+.hook-icon-button-active() { border-color: #333333; }
 
 // Miscellaneous
 // ========================================================================
 
-.hook-icon-misc() {}
+.hook-icon-misc() {
+
+    .uk-icon-hover + .uk-icon-hover  { margin-left: 10px; }
+
+}

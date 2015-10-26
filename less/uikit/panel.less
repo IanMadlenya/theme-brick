@@ -8,8 +8,8 @@
 // ========================================================================
 
 @panel-title-margin-bottom:                     @global-margin;
-@panel-title-font-size:                         round((@global-font-size * 1.28)); // 18px / 20px
-@panel-title-line-height:                       round((@panel-title-font-size * 1.32)); // 24px / 26px
+@panel-title-font-size:                         24px;
+@panel-title-line-height:                       34px;
 @panel-title-font-weight:                       300;
 @panel-title-color:                             @global-dark-color;
 
@@ -19,10 +19,9 @@
 @panel-box-background:                          @global-background;
 @panel-box-color:                               @global-color;
 @panel-box-title-color:                         @global-dark-color;
+@panel-box-badge-top:                           20px;
 
 @panel-box-teaser-margin:                       -(@panel-box-padding);
-
-@panel-box-badge-top:                           0;
 
 @panel-box-primary-background:                  @global-default-hover-background;
 @panel-box-primary-color:                       @global-color;
@@ -48,6 +47,21 @@
 @panel-divider-border:                          @global-border;
 
 
+// NEW
+
+@panel-box-background-startcolor:                         #fff;
+@panel-box-background-endcolor:                           #f9f9f9;
+
+
+@panel-box-primary-background-startcolor:                 #fff;
+@panel-box-primary-background-endcolor:                   #f2f2f2;
+
+
+@panel-box-secondary-background-startcolor:               #fff;
+@panel-box-secondary-background-endcolor:                 #e8eae9;
+
+
+
 // Sub-object: `uk-panel-title`
 // ========================================================================
 
@@ -63,7 +77,15 @@
 // Modifier: `uk-panel-box`
 // ========================================================================
 
-.hook-panel-box() { box-shadow: 0 1px 4px rgba(0, 0, 0, 0.09); }
+.hook-panel-box() {
+
+    background-color: @panel-box-background-endcolor;
+
+    background: -webkit-radial-gradient(center, ellipse cover, @panel-box-background-startcolor 0%,@panel-box-background-endcolor 100%);
+
+    background: radial-gradient(ellipse at center, @panel-box-background-startcolor 0%,@panel-box-background-endcolor 100%);
+
+}
 
 .hook-panel-box-hover() {}
 
@@ -71,7 +93,15 @@
 // Sub-modifier: `uk-panel-box-primary`
 //
 
-.hook-panel-box-primary() { box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12); }
+.hook-panel-box-primary() {
+
+    background-color: @panel-box-primary-background-endcolor;
+
+    background: -webkit-radial-gradient(center, ellipse cover, @panel-box-primary-background-startcolor 0%,@panel-box-primary-background-endcolor 100%);
+
+    background: radial-gradient(ellipse at center, @panel-box-primary-background-startcolor 0%,@panel-box-primary-background-endcolor 100%);
+
+}
 
 .hook-panel-box-primary-hover() {}
 
@@ -79,7 +109,15 @@
 // Sub-modifier: `uk-panel-box-secondary`
 //
 
-.hook-panel-box-secondary() {}
+.hook-panel-box-secondary() {
+
+    background-color: @panel-box-secondary-background-endcolor;
+
+    background: -webkit-radial-gradient(center, ellipse cover, @panel-box-secondary-background-startcolor 0%,@panel-box-secondary-background-endcolor 100%);
+
+    background: radial-gradient(ellipse at center, @panel-box-secondary-background-startcolor 0%,@panel-box-secondary-background-endcolor 100%);
+
+}
 
 .hook-panel-box-secondary-hover() {}
 
@@ -89,7 +127,7 @@
 
 .hook-panel-hover() {}
 
-.hook-panel-hover-hover() { box-shadow: 0 1px 4px rgba(0, 0, 0, 0.09); }
+.hook-panel-hover-hover() {}
 
 
 // Modifier: `uk-panel-header`
@@ -103,9 +141,24 @@
 
 .hook-panel-misc() {
 
-    .uk-panel-space .uk-panel-badge {
-        top: 0;
-        right: 0;
+    /* Only xlarge screens */
+    @media (min-width: @breakpoint-xlarge) {
+
+        .uk-panel-space,
+        .uk-panel-box { padding: 50px; }
+
+        .uk-panel-box .uk-panel-teaser {
+            margin-top: -50px;
+            margin-left: -50px;
+            margin-right: -50px;
+        }
+
+        .uk-panel-space .uk-panel-teaser {
+            margin-top: -50px;
+            margin-left: -50px;
+            margin-right: -50px;
+        }
+
     }
 
 }

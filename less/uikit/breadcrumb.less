@@ -7,10 +7,11 @@
 // Variables
 // ========================================================================
 
-@breadcrumb-font-size:                          round((@global-font-size * 0.85)); // 12px / 14px
+@breadcrumb-font-size:                          13px;
 
-@breadcrumb-disabled-color:                     fade(@global-muted-color, 50%);
+@breadcrumb-divider:                            "|";
 @breadcrumb-divider-margin:                     12px;
+@breadcrumb-disabled-color:                     fade(@global-muted-color, 50%);
 
 
 // Component
@@ -34,6 +35,7 @@
 .hook-breadcrumb-misc() {
 
     .uk-breadcrumb > li > a { color: @global-muted-color; }
+
     .uk-breadcrumb > li > a:hover {
         color: @global-color;
         text-decoration: none;

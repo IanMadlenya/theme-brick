@@ -13,11 +13,50 @@
 @overlay-icon-size:                             34px;
 @overlay-icon-color:                            @global-contrast-color;
 
+//
+// New
+//
+
+@overlay-button-border:                         @global-contrast-color;
+@overlay-button-color:                          @global-contrast-color;
+
+@overlay-button-hover-border:                   #333;
+@overlay-button-active-color:                   @global-contrast-color;
+
+@overlay-icon-button-color:                     @global-contrast-color;
+@overlay-icon-button-active-background:         @overlay-button-hover-border;
+
 
 // Sub-object `uk-overlay-panel`
 // ========================================================================
 
-.hook-overlay-panel() {}
+.hook-overlay-panel() {
+
+    // Button
+    .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger) {
+        border-color: @overlay-button-border;
+        color: @overlay-button-color;
+    }
+
+    .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger):hover { border-color: @overlay-button-hover-border; }
+
+    .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger):active,
+    .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger).uk-active,
+        .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger):focus {
+        border-color: @overlay-button-hover-border;
+        color: @overlay-button-active-color;
+    }
+
+     // Icon Button
+    .uk-icon-button { color: @overlay-icon-button-color; }
+
+    .uk-icon-button:active {
+        background: @overlay-icon-button-active-background;
+        border-color: @overlay-icon-button-active-background;
+
+    }
+
+}
 
 
 // Sub-object `uk-overlay-background`
@@ -38,7 +77,7 @@
 .hook-overlay-icon() {
     height: 34px;
     width: 34px;
-    background: url("@{global-image-path}/plus.svg") 0 0 no-repeat;
+    background: url("@{global-image-path}/overlay-plus.svg") 0 0 no-repeat;
 }
 
 

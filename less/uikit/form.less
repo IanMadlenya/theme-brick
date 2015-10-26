@@ -12,7 +12,7 @@
 @form-background:                               @global-background;
 @form-color:                                    @global-color;
 
-@form-focus-border:                             @global-primary-background;
+@form-focus-border:                             darken(@form-border, 25%);
 @form-focus-background:                         @global-background;
 @form-focus-color:                              @global-color;
 
@@ -25,13 +25,13 @@
 @form-gutter:                                   @global-margin;
 
 @form-legend-border:                            @global-border;
-@form-legend-font-size:                         round((@global-font-size * 1.28)); // 18px / 20px
-@form-legend-line-height:                       round((@form-legend-font-size * 1.68)); // 30px / 34px
+@form-legend-font-size:                         @global-font-size;
+@form-legend-line-height:                       @global-line-height;
 
 @form-small-height:                             @global-height-small;
 @form-large-height:                             @global-height-large;
-@form-small-font-size:                          round((@global-font-size * 0.85)); // 12px / 14px
-@form-large-font-size:                          round((@global-font-size * 1.14)); // 16px / 18px
+@form-small-font-size:                          12px;
+@form-large-font-size:                          16px;
 
 @form-danger-border:                            @global-danger-background;
 @form-danger-background:                        @global-background;
@@ -49,12 +49,13 @@
 @form-horizontal-label-margin-top:              7px;
 @form-horizontal-controls-text-padding-top:     7px;
 
-@form-icon-font-size:                           @global-font-size;
 @form-icon-color:                               @global-muted-color;
 
 //
 // New
 //
+
+@form-font-size:                                14px;
 
 @form-stacked-font-size:                        round((@global-font-size * 0.85)); // 12px / 14px
 @form-stacked-line-height:                      round((@form-stacked-font-size *  1.46)); // 18px / 20px
@@ -63,7 +64,10 @@
 // Component
 // ========================================================================
 
-.hook-form() {}
+.hook-form() {
+    border-radius: 3px;
+    font-size: @form-font-size;
+}
 
 // Focus state
 .hook-form-focus() {}
@@ -119,5 +123,7 @@
         color: @global-muted-color;
         font-style: italic;
     }
+
+    .uk-form-icon > [class*='uk-icon-'] { margin-top: -7px; }
 
 }
