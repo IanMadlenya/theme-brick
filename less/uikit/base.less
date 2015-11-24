@@ -63,6 +63,14 @@
 .hook-base-body() {}
 
 
+// Links
+// ========================================================================
+
+.hook-base-link() {}
+
+.hook-base-link-hover() {}
+
+
 // Text-level semantics
 // ========================================================================
 
@@ -75,6 +83,8 @@
 
 // Headings
 // ========================================================================
+
+.hook-base-h() {}
 
 .hook-base-h1() {}
 
@@ -89,6 +99,21 @@
 .hook-base-h6() { font-weight: normal; }
 
 
+// Horizontal rules
+// ========================================================================
+
+.hook-base-hr() {}
+
+
+// Blockquotes
+// ========================================================================
+
+.hook-base-blockquote() {
+    text-align: center;
+    color: @global-dark-color;
+}
+
+
 // Preformatted text
 // ========================================================================
 
@@ -101,10 +126,5 @@
 .hook-base-misc() {
 
     mark { font-style: italic; }
-
-    blockquote {
-        text-align: center;
-        color: @global-dark-color;
-    }
 
 }
