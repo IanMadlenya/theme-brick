@@ -16,13 +16,20 @@
 
 @block-secondary-background:                    #1f1915;
 
+//
+// New
+//
+
+@block-padding-horizontal:                      15px;
+@block-xlarge-padding-horizontal:               132px;
+
 
 // Component
 // ========================================================================
 
 .hook-block() {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: @block-padding-horizontal;
+    padding-right: @block-padding-horizontal;
 }
 
 
@@ -57,8 +64,8 @@
     @media (min-width: @breakpoint-xlarge) {
 
         .uk-block {
-            padding-left: 132px;
-            padding-right: 132px;
+            padding-left: @block-xlarge-padding-horizontal;
+            padding-right: @block-xlarge-padding-horizontal;
         }
 
     }

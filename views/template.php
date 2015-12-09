@@ -96,7 +96,7 @@
                 <?php endif; ?>
 
                 <?php if ($view->position()->exists('footer')) : ?>
-                <div id="tm-footer" class="tm-footer uk-block uk-block-secondary uk-contrast">
+                <div id="tm-footer" class="tm-footer uk-block-secondary uk-contrast">
 
                     <section class="uk-grid uk-grid-match" data-uk-grid-margin>
                         <?= $view->position('footer', 'position-grid.php') ?>

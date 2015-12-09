@@ -25,7 +25,6 @@ html { overflow-y: scroll; }
 .tm-container {
     position: relative;
     background: @global-background;
-    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.03);
 }
 
 
@@ -58,8 +57,6 @@ html { overflow-y: scroll; }
     background: @navbar-background;
     z-index: 1;
 }
-
-.tm-navbar.uk-active { box-shadow: 0px 3px 8px -4px rgba(0,0,0,0.15); }
 
 /* Navbar as overlay */
 .tm-navbar-overlay:not(.uk-active) {
@@ -134,17 +131,13 @@ html { overflow-y: scroll; }
 @media (min-width: @breakpoint-medium) {
 
     .tm-footer {
-        padding-top: 40px;
-        padding-bottom: 40px;
+        padding: 40px;
+
     }
 
 }
 
-.tm-footer .uk-subnav {
-    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    text-transform: uppercase;
-}
+.tm-footer .uk-subnav { font-size: 14px; }
 
 
 /* Blog
@@ -153,4 +146,51 @@ html { overflow-y: scroll; }
 .tm-container-small {
     max-width: 800px;
     margin: auto;
+}
+
+.tm-article-meta-date {
+    font-family: @base-heading-font-family;
+    font-size: @article-title-font-size;
+    line-height: @article-title-line-height;
+    color: lighten(@article-meta-color, 15%);
+}
+
+/*
+ * Reset block padding
+ */
+
+.uk-article .tm-blog-image { margin-top: -@block-padding-vertical; }
+.uk-article + .uk-article .tm-blog-image { margin-top: 0; }
+
+.tm-blog-image {
+    margin-left: -@block-padding-horizontal;
+    margin-right: -@block-padding-horizontal;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: @breakpoint-small) {
+
+    .tm-blog-image {
+        margin-left: -@global-grid-gutter;
+        margin-right: -@global-grid-gutter;
+    }
+
+}
+
+/* Phone landscape and bigger */
+@media (min-width: @breakpoint-medium) {
+
+    .uk-article .tm-blog-image { margin-top: -@block-padding-vertical-large; }
+    .uk-article + .uk-article .tm-blog-image { margin-top: 0; }
+
+}
+
+/* Large screen and bigger */
+@media (min-width: @breakpoint-xlarge) {
+
+    .tm-blog-image {
+        margin-left: -@block-xlarge-padding-horizontal;
+        margin-right: -@block-xlarge-padding-horizontal;
+    }
+
 }
