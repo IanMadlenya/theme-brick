@@ -11,8 +11,8 @@
     <div class="uk-grid uk-margin-large-top">
         <div class="tm-article-meta uk-width-large-1-4">
 
-            <p class="uk-article-meta">
-                <?= __('Written by %name% on %date%', ['%name%' => $post->user->name, '%date%' => '<time datetime="'.$post->date->format(\DateTime::W3C).'" v-cloak>{{ "'.$post->date->format(\DateTime::W3C).'" | date "longDate" }}</time>' ]) ?>
+            <p class="uk-article-meta tm-article-meta-date uk-margin-small">
+                <time datetime="<?=$post->date->format(\DateTime::W3C)?>" v-cloak>{{ "<?=$post->date->format(\DateTime::W3C)?>" | date "shortDate" }}</time>
             </p>
 
         </div>
@@ -22,6 +22,8 @@
             <h1 class="uk-article-title"><?= $post->title ?></h1>
 
             <div class="uk-margin"><?= $post->content ?></div>
+
+            <p class="uk-article-meta uk-margin-remove"><?= __('Written by %name%', ['%name%' => $post->user->name]) ?></p>
 
             <?= $view->render('blog/comments.php') ?>
 

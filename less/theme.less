@@ -123,6 +123,11 @@ html { overflow-y: scroll; }
 /* Blocks
  ========================================================================== */
 
+.tm-hero {
+    padding-top: 240px;
+    padding-bottom: 240px;
+}
+
 /*
  * Footer
  */
@@ -131,7 +136,7 @@ html { overflow-y: scroll; }
 @media (min-width: @breakpoint-medium) {
 
     .tm-footer {
-        padding: 40px;
+        padding: 25px 40px;
 
     }
 
@@ -159,8 +164,8 @@ html { overflow-y: scroll; }
  * Reset block padding
  */
 
-.uk-article .tm-blog-image { margin-top: -@block-padding-vertical; }
-.uk-article + .uk-article .tm-blog-image { margin-top: 0; }
+div + .uk-article .tm-blog-image { margin-top: -@block-padding-vertical; }
+
 
 .tm-blog-image {
     margin-left: -@block-padding-horizontal;
@@ -180,8 +185,8 @@ html { overflow-y: scroll; }
 /* Phone landscape and bigger */
 @media (min-width: @breakpoint-medium) {
 
-    .uk-article .tm-blog-image { margin-top: -@block-padding-vertical-large; }
-    .uk-article + .uk-article .tm-blog-image { margin-top: 0; }
+    div + .uk-article .tm-blog-image { margin-top: -@block-padding-vertical-large; }
+
 
 }
 
