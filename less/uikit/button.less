@@ -19,7 +19,7 @@
 
 @button-mini-font-size:                         10px;
 @button-small-font-size:                        12px;
-@button-large-font-size:                        16px;
+@button-large-font-size:                        14px;
 
 @button-padding-horizontal:                     20px;
 @button-mini-padding-horizontal:                8px;
@@ -34,7 +34,7 @@
 @button-active-background:                      #333333;
 @button-active-color:                           @global-contrast-color;
 
-@button-primary-background:                     #1c1c1c;
+@button-primary-background:                     #585851;
 @button-primary-color:                          @global-contrast-color;
 @button-primary-hover-background:               lighten(@button-primary-background, 30%);
 @button-primary-hover-color:                    @global-contrast-color;
@@ -63,16 +63,23 @@
 @button-link-hover-text-decoration:             none;
 @button-link-disabled-color:                    @global-muted-color;
 
+//
+// New
+//
+
+@button-font-family:                            'Montserrat';
+@button-text-transform:                         uppercase;
+
 
 // Component
 // ========================================================================
 
 .hook-button() {
     border: 1px solid lighten(@button-color, 20%);
+    font-family: @button-font-family;
+    text-transform: @button-text-transform;
     -webkit-transition: all .3s ease;
     transition: all .3s ease;
-    font-family: 'Montserrat';
-    text-transform: uppercase;
 }
 
 .hook-button-hover() { border-color: @button-hover-background; }
