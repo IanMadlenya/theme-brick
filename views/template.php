@@ -110,7 +110,19 @@
 
         <?php if ($view->position()->exists('offcanvas') || $view->menu()->exists('offcanvas')) : ?>
         <div id="offcanvas" class="uk-offcanvas">
-            <div class="uk-offcanvas-bar uk-offcanvas-bar-flip">
+            <div class="uk-offcanvas-bar uk-offcanvas-bar-flip uk-text-center">
+
+                <?php if ($params['logo']) : ?>
+                <div class="uk-panel">
+
+                        <a href="<?= $view->url()->get() ?>">
+
+                            <img src="<?= ($params['logo_contrast']) ? $this->escape($params['logo_contrast']) : $this->escape($params['logo']) ?>" alt="">
+
+                        </a>
+
+                </div>
+                <?php endif ?>
 
                 <?php if ($view->menu()->exists('offcanvas')) : ?>
                     <?= $view->menu('offcanvas', ['class' => 'uk-nav-offcanvas']) ?>
