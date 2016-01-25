@@ -8,7 +8,7 @@
         </div>
     <?php endif ?>
 
-    <div class="uk-grid uk-margin-large-top">
+    <div class="uk-grid">
         <div class="tm-article-meta uk-width-large-1-4">
 
             <p class="uk-article-meta tm-article-meta-date uk-margin-small">

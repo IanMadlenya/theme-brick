@@ -3,7 +3,7 @@
 @icon-font-path: "../../../../../app/assets/uikit/fonts";
 @global-image-path: '../../less/uikit/images';
 
-@base-body-background: #f0f0f0;
+@base-body-background: #f3f3f3;
 
 
 /* ========================================================================
@@ -27,23 +27,12 @@ html { overflow-y: scroll; }
     background: @global-background;
 }
 
-
-/* Phone landscape and bigger */
-@media (min-width: @breakpoint-small) {
-
-    .tm-container {
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-
-}
-
 /* Desktop and bigger */
 @media (min-width: @breakpoint-large) {
 
     .tm-container {
-        margin-top: 100px;
-        margin-bottom: 100px;
+        margin-top: 70px;
+        margin-bottom: 70px;
     }
 
 }
@@ -128,29 +117,53 @@ html { overflow-y: scroll; }
     padding-bottom: 240px;
 }
 
-/*
- * Footer
- */
-
-/* Phone landscape and bigger */
-@media (min-width: @breakpoint-medium) {
-
-    .tm-footer {
-        padding: 25px 40px;
-
-    }
-
-}
+.tm-footer { padding: 25px @block-padding-horizontal; }
 
 .tm-footer .uk-subnav { font-size: 14px; }
 
 
+/* Tablet and bigger */
+@media (max-width: @breakpoint-medium) {
+
+    .tm-footer .uk-float-right { float: none; }
+
+}
+
 /* Blog
  ========================================================================== */
 
-.tm-container-small {
-    max-width: 800px;
-    margin: auto;
+/*
+ * Reset block top padding
+ */
+
+.uk-article:first-of-type .tm-blog-image { margin-top: -@block-padding-vertical; }
+
+/* Tablet and bigger */
+@media (min-width: @breakpoint-medium) {
+
+    .uk-article:first-of-type .tm-blog-image { margin-top: -@block-padding-vertical-large; }
+
+}
+
+/*
+ * Marginless blog image
+ */
+
+.tm-blog-image {
+    margin-left: -@block-padding-horizontal;
+    margin-right: -@block-padding-horizontal;
+    margin-bottom: @article-margin-top;
+}
+
+/* Large screen and bigger */
+@media (min-width: @breakpoint-xlarge) {
+
+    .tm-blog-image {
+        margin-left: -@block-xlarge-padding-horizontal;
+        margin-right: -@block-xlarge-padding-horizontal;
+        margin-bottom: @article-margin-large-top;
+    }
+
 }
 
 .tm-article-meta-date {
@@ -161,41 +174,14 @@ html { overflow-y: scroll; }
 }
 
 /*
- * Reset block padding
+ * Spacing for subnav
  */
 
-div + .uk-article .tm-blog-image { margin-top: -@block-padding-vertical; }
+.tm-blog-article .uk-subnav { margin-top: 70px; }
 
+/* Tablets portrait and smaller*/
+@media (max-width: @breakpoint-medium) {
 
-.tm-blog-image {
-    margin-left: -@block-padding-horizontal;
-    margin-right: -@block-padding-horizontal;
-}
-
-/* Phone landscape and bigger */
-@media (min-width: @breakpoint-small) {
-
-    .tm-blog-image {
-        margin-left: -@global-grid-gutter;
-        margin-right: -@global-grid-gutter;
-    }
-
-}
-
-/* Phone landscape and bigger */
-@media (min-width: @breakpoint-medium) {
-
-    div + .uk-article .tm-blog-image { margin-top: -@block-padding-vertical-large; }
-
-
-}
-
-/* Large screen and bigger */
-@media (min-width: @breakpoint-xlarge) {
-
-    .tm-blog-image {
-        margin-left: -@block-xlarge-padding-horizontal;
-        margin-right: -@block-xlarge-padding-horizontal;
-    }
+    .tm-blog-article .uk-subnav { margin-top: 0; }
 
 }

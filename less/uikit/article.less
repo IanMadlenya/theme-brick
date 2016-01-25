@@ -7,7 +7,7 @@
 // Variables
 // ========================================================================
 
-@article-margin-top:                            80px;
+@article-margin-top:                            60px;
 
 @article-title-font-size:                       30px;
 @article-title-line-height:                     40px;
@@ -31,6 +31,8 @@
 //
 
 @article-title-hover-color:                     lighten(@global-dark-color, 30%);
+@article-margin-large-top:                      90px;
+
 
 // Sub-object `uk-article-title`
 // ========================================================================
@@ -76,5 +78,12 @@
     }
 
     .uk-article-title a:hover { color: @article-title-hover-color; }
+
+    /* Tablet and bigger */
+    @media (min-width: @breakpoint-medium) {
+
+        .uk-article + .uk-article { margin-top: @article-margin-large-top; }
+
+    }
 
 }

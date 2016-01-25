@@ -29,14 +29,14 @@
                         <?php endif ?>
 
                         <?php if ($view->menu()->exists('main') || $view->position()->exists('navbar')) : ?>
-                        <div class="uk-navbar-flip uk-hidden-small">
+                        <div class="uk-navbar-flip uk-visible-large">
                             <?= $view->menu('main', 'menu-navbar.php') ?>
                             <?= $view->position('navbar', 'position-blank.php') ?>
                         </div>
                         <?php endif ?>
 
                         <?php if ($view->position()->exists('offcanvas') || $view->menu()->exists('offcanvas')) : ?>
-                        <div class="uk-navbar-flip uk-visible-small">
+                        <div class="uk-navbar-flip uk-hidden-large">
                             <a href="#offcanvas" class="uk-navbar-toggle" data-uk-offcanvas></a>
                         </div>
                         <?php endif ?>

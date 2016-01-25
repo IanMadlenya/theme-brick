@@ -1,13 +1,13 @@
 <?php $view->script('posts', 'blog:app/bundle/posts.js', 'vue') ?>
 
     <?php foreach ($posts as $post) : ?>
-    <article class="uk-article">
+    <article class="uk-article tm-blog-article">
 
         <?php if ($image = $post->get('image.src')): ?>
         <a class="uk-display-block tm-blog-image" href="<?= $view->url('@blog/id', ['id' => $post->id]) ?>"><img src="<?= $image ?>" alt="<?= $post->get('image.alt') ?>"></a>
         <?php endif ?>
 
-        <div class="uk-grid uk-margin-large-top">
+        <div class="uk-grid">
             <div class="tm-article-meta uk-width-1-1 uk-width-large-1-4">
 
                 <p class="uk-article-meta tm-article-meta-date">
@@ -20,21 +20,20 @@
 
                 <h1 class="uk-article-title"><a href="<?= $view->url('@blog/id', ['id' => $post->id]) ?>"><?= $post->title ?></a></h1>
 
-                <div class="uk-margin"><?= $post->excerpt ?: $post->content ?></div>
+                <div><?= $post->excerpt ?: $post->content ?></div>
 
-                <div class="uk-margin-large-top">
-                    <ul class="uk-subnav uk-subnav-line">
+                <ul class="uk-subnav uk-subnav-line">
 
-                        <?php if (isset($post->readmore) && $post->readmore || $post->excerpt) : ?>
-                        <li><a href="<?= $view->url('@blog/id', ['id' => $post->id]) ?>"><?= __('Read more') ?></a></li>
-                        <?php endif ?>
+                    <?php if (isset($post->readmore) && $post->readmore || $post->excerpt) : ?>
+                    <li><a href="<?= $view->url('@blog/id', ['id' => $post->id]) ?>"><?= __('Read more') ?></a></li>
+                    <?php endif ?>
 
-                        <?php if ($post->isCommentable() || $post->comment_count) : ?>
-                        <li><a href="<?= $view->url('@blog/id#comments', ['id' => $post->id]) ?>"><?= _c('{0} No comments|{1} %num% Comment|]1,Inf[ %num% Comments', $post->comment_count, ['%num%' => $post->comment_count]) ?></a></li>
-                        <?php endif ?>
+                    <?php if ($post->isCommentable() || $post->comment_count) : ?>
+                    <li><a href="<?= $view->url('@blog/id#comments', ['id' => $post->id]) ?>"><?= _c('{0} No comments|{1} %num% Comment|]1,Inf[ %num% Comments', $post->comment_count, ['%num%' => $post->comment_count]) ?></a></li>
+                    <?php endif ?>
 
-                    </ul>
-                </div>
+                </ul>
+
 
             </div>
 
