@@ -68,7 +68,8 @@ return [
      */
     'config' => [
 
-        'logo_contrast' => ''
+        'logo_contrast' => '',
+        'logo_offcanvas' => ''
 
     ],
 
