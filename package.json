@@ -1,8 +1,8 @@
 {
-    "name": "pagekit-fjord",
+    "name": "pagekit-brick",
     "type": "pagekit-theme",
     "version": "0.9.0",
-    "title": "Pagekit Fjord",
+    "title": "Pagekit Brick",
     "description": "Pagekit Theme",
     "license": "MIT",
     "authors": [
