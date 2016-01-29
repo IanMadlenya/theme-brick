@@ -2,7 +2,7 @@
 
 return [
 
-    'name' => 'theme-fjord',
+    'name' => 'theme-brick',
 
     /**
      * Menu positions
