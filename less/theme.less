@@ -112,44 +112,50 @@ html { overflow-y: scroll; }
 /* Blocks
  ========================================================================== */
 
+.tm-hero-padding > * { padding-top: 90px; }
+
 .tm-hero {
-    padding-top: 240px;
-    padding-bottom: 240px;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
+
+/* Tablet and bigger */
+@media (min-width: @breakpoint-medium) {
+
+    .tm-hero {
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+
+}
+
+/* Tablet and bigger */
+@media (min-width: @breakpoint-large) {
+
+    .tm-hero {
+        padding-top: 220px;
+        padding-bottom: 220px;
+    }
+
+}
+
+/*
+ * Footer
+ */
 
 .tm-footer { padding: 25px @block-padding-horizontal; }
 
 .tm-footer .uk-subnav { font-size: 14px; }
 
 
-/* Tablet and bigger */
-@media (max-width: @breakpoint-medium) {
-
-    .tm-footer .uk-float-right { float: none; }
-
-}
-
 /* Blog
  ========================================================================== */
-
-/*
- * Reset block top padding
- */
-
-.uk-article:first-of-type .tm-blog-image { margin-top: -@block-padding-vertical; }
-
-/* Tablet and bigger */
-@media (min-width: @breakpoint-medium) {
-
-    .uk-article:first-of-type .tm-blog-image { margin-top: -@block-padding-vertical-large; }
-
-}
 
 /*
  * Marginless blog image
  */
 
-.tm-blog-image {
+.tm-article-image {
     margin-left: -@block-padding-horizontal;
     margin-right: -@block-padding-horizontal;
     margin-bottom: @article-margin-top;
@@ -158,15 +164,32 @@ html { overflow-y: scroll; }
 /* Large screen and bigger */
 @media (min-width: @breakpoint-xlarge) {
 
-    .tm-blog-image {
+    .tm-article-image {
         margin-left: -@block-xlarge-padding-horizontal;
         margin-right: -@block-xlarge-padding-horizontal;
-        margin-bottom: @article-margin-large-top;
+        margin-bottom: @article-large-margin-top;
     }
 
 }
 
-.tm-article-meta-date {
+/*
+ * Reset block top padding
+ */
+
+.uk-article:first-of-type .tm-article-image { margin-top: -@block-padding-vertical; }
+
+/* Tablet and bigger */
+@media (min-width: @breakpoint-medium) {
+
+    .uk-article:first-of-type .tm-article-image { margin-top: -@block-padding-vertical-large; }
+
+}
+
+/*
+ * Date
+ */
+
+.tm-article-date {
     font-family: @base-heading-font-family;
     font-size: @article-title-font-size;
     line-height: @article-title-line-height;
@@ -177,17 +200,18 @@ html { overflow-y: scroll; }
  * Spacing for subnav
  */
 
-.tm-blog-article .uk-subnav { margin-top: 70px; }
+.tm-subnav { margin-top: 70px; }
 
 /* Tablets portrait and smaller*/
 @media (max-width: @breakpoint-medium) {
 
-    .tm-blog-article .uk-subnav { margin-top: 0; }
+    .tm-subnav { margin-top: 0; }
 
 }
 
-
-
+/*
+ * Pagination
+ */
 
 /* Phone landscape and bigger */
 @media (min-width: @breakpoint-medium) {

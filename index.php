@@ -117,6 +117,8 @@ return [
                 $sticky['top'] = '.uk-sticky-placeholder + *';
                 $classes['navbar'] .= ' tm-navbar-overlay tm-navbar-transparent';
 
+                $classes['hero'] = 'tm-hero-padding';
+
                 if ($event['hero_contrast']) {
 
                     $sticky['clsinactive'] = 'tm-navbar-transparent tm-navbar-contrast';

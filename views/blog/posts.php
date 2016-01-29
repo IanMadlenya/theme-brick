@@ -1,28 +1,28 @@
 <?php $view->script('posts', 'blog:app/bundle/posts.js', 'vue') ?>
 
     <?php foreach ($posts as $post) : ?>
-    <article class="uk-article tm-blog-article">
+    <article class="uk-article">
 
         <?php if ($image = $post->get('image.src')): ?>
-        <a class="uk-display-block tm-blog-image" href="<?= $view->url('@blog/id', ['id' => $post->id]) ?>"><img src="<?= $image ?>" alt="<?= $post->get('image.alt') ?>"></a>
+        <a class="uk-display-block tm-article-image" href="<?= $view->url('@blog/id', ['id' => $post->id]) ?>"><img src="<?= $image ?>" alt="<?= $post->get('image.alt') ?>"></a>
         <?php endif ?>
 
         <div class="uk-grid">
-            <div class="tm-article-meta uk-width-1-1 uk-width-large-1-4">
+            <div class="uk-width-large-1-4">
 
-                <p class="uk-article-meta tm-article-meta-date">
+                <p class="uk-article-meta tm-article-date">
                     <time datetime="<?=$post->date->format(\DateTime::W3C)?>" v-cloak>{{ "<?=$post->date->format(\DateTime::W3C)?>" | date "shortDate" }}</time>
                 </p>
 
             </div>
 
-            <div class="uk-width-1-1 uk-width-large-3-4">
+            <div class="uk-width-large-3-4">
 
                 <h1 class="uk-article-title"><a href="<?= $view->url('@blog/id', ['id' => $post->id]) ?>"><?= $post->title ?></a></h1>
 
                 <div><?= $post->excerpt ?: $post->content ?></div>
 
-                <ul class="uk-subnav uk-subnav-line">
+                <ul class="uk-subnav uk-subnav-line tm-subnav">
 
                     <?php if (isset($post->readmore) && $post->readmore || $post->excerpt) : ?>
                     <li><a href="<?= $view->url('@blog/id', ['id' => $post->id]) ?>"><?= __('Read more') ?></a></li>
