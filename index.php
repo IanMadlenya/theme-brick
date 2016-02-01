@@ -136,7 +136,7 @@ return [
             }
 
             if ($event['hero_parallax'] && $view->position()->exists('hero') && $event['hero_image']) {
-                $classes['parallax'] = 'data-uk-parallax="{bg: \'-400\'}"';
+                $classes['parallax'] = 'data-uk-parallax="{bg: \'-250\'}"';
             }
 
             if ($event['hero_contrast'] && $event['hero_image']) {
