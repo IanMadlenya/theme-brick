@@ -17,16 +17,21 @@
 
 @contrast-list-line-border:                      fade(@contrast-color, 5%);
 
+@contrast-tab-hover-border:                      rgba(0,0,0,0);
+@contrast-tab-hover-background:                  rgba(0,0,0,0);
+@contrast-tab-hover-color:                       @contrast-color;
+@contrast-tab-active-color:                      @global-dark-color;
+
 @contrast-form-border:                           fade(@contrast-color, 50%);
 @contrast-form-background:                       transparent;
 @contrast-form-focus-background:                 transparent;
 
-@contrast-button-color:                          @contrast-color;
-@contrast-button-background:                     rgba(0,0,0,0);
-@contrast-button-hover-color:                    @global-dark-color;
-@contrast-button-hover-background:               @contrast-color;
-@contrast-button-active-background:              @contrast-color;
-@contrast-button-active-color:                   @global-dark-color;
+@contrast-button-color:                          @global-dark-color;
+@contrast-button-background:                     @contrast-color;
+@contrast-button-hover-color:                    @contrast-color;
+@contrast-button-hover-background:               transparent;
+@contrast-button-active-background:              transparent;
+@contrast-button-active-color:                   @contrast-color;
 
 @contrast-button-primary-background:             @contrast-color;
 @contrast-button-primary-color:                  @global-dark-color;
@@ -39,8 +44,8 @@
 @contrast-icon-button-background:                transparent;
 @contrast-icon-button-hover-background:          @contrast-inverted-color;
 @contrast-icon-button-hover-color:               @global-dark-color;
-@contrast-icon-button-active-background:         #bdbdbd;
-@contrast-icon-button-active-color:              @contrast-inverted-color;
+@contrast-icon-button-active-background:         @contrast-icon-button-hover-background;
+@contrast-icon-button-active-color:              @global-dark-color;
 
 @contrast-text-muted-color:                      fade(@contrast-color, 80%);
 @contrast-text-primary-color:                    #f0615c;
