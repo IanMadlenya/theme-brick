@@ -1,7 +1,7 @@
 {
     "name": "pagekit/theme-brick",
     "type": "pagekit-theme",
-    "version": "0.9.0",
+    "version": "1.0.0",
     "title": "Brick",
     "description": "A great theme to get your business started.",
     "license": "MIT",
