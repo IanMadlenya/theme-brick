@@ -1,9 +1,9 @@
 @import "uikit/uikit.less";
 
-@icon-font-path: "../../../../../app/assets/uikit/fonts";
-@global-image-path: '../../less/uikit/images';
+@icon-font-path: "../../../../app/assets/uikit/fonts";
+@global-image-path: '../less/uikit/images';
 
-@base-body-background: #f0f0f0;
+@base-body-background: #f3f3f3;
 
 
 /* ========================================================================
@@ -25,26 +25,14 @@ html { overflow-y: scroll; }
 .tm-container {
     position: relative;
     background: @global-background;
-    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.03);
-}
-
-
-/* Phone landscape and bigger */
-@media (min-width: @breakpoint-small) {
-
-    .tm-container {
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-
 }
 
 /* Desktop and bigger */
 @media (min-width: @breakpoint-large) {
 
     .tm-container {
-        margin-top: 100px;
-        margin-bottom: 100px;
+        margin-top: 70px;
+        margin-bottom: 70px;
     }
 
 }
@@ -58,8 +46,6 @@ html { overflow-y: scroll; }
     background: @navbar-background;
     z-index: 1;
 }
-
-.tm-navbar.uk-active { box-shadow: 0px 3px 8px -4px rgba(0,0,0,0.15); }
 
 /* Navbar as overlay */
 .tm-navbar-overlay:not(.uk-active) {
@@ -126,31 +112,111 @@ html { overflow-y: scroll; }
 /* Blocks
  ========================================================================== */
 
-/*
- * Footer
- */
+.tm-hero-padding > * { padding-top: 90px; }
 
-/* Phone landscape and bigger */
+.tm-hero {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+/* Tablet and bigger */
 @media (min-width: @breakpoint-medium) {
 
-    .tm-footer {
-        padding-top: 40px;
-        padding-bottom: 40px;
+    .tm-hero {
+        padding-top: 150px;
+        padding-bottom: 150px;
     }
 
 }
 
-.tm-footer .uk-subnav {
-    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-    font-size: 13px;
-    text-transform: uppercase;
+/* Tablet and bigger */
+@media (min-width: @breakpoint-large) {
+
+    .tm-hero {
+        padding-top: 240px;
+        padding-bottom: 240px;
+    }
+
 }
+
+/*
+ * Footer
+ */
+
+.tm-footer { padding: 25px @block-padding-horizontal; }
 
 
 /* Blog
  ========================================================================== */
 
-.tm-container-small {
-    max-width: 800px;
-    margin: auto;
+/*
+ * Marginless blog image
+ */
+
+.tm-article-image {
+    margin-left: -@block-padding-horizontal;
+    margin-right: -@block-padding-horizontal;
+    margin-bottom: @article-margin-top;
+}
+
+/* Large screen and bigger */
+@media (min-width: @breakpoint-xlarge) {
+
+    .tm-article-image {
+        margin-left: -@block-xlarge-padding-horizontal;
+        margin-right: -@block-xlarge-padding-horizontal;
+        margin-bottom: @article-large-margin-top;
+    }
+
+}
+
+/*
+ * Reset block top padding
+ */
+
+.uk-article:first-of-type .tm-article-image { margin-top: -@block-padding-vertical; }
+
+/* Tablet and bigger */
+@media (min-width: @breakpoint-medium) {
+
+    .uk-article:first-of-type .tm-article-image { margin-top: -@block-padding-vertical-large; }
+
+}
+
+/*
+ * Date
+ */
+
+.tm-article-date {
+    font-family: @base-heading-font-family;
+    font-size: @article-title-font-size;
+    line-height: @article-title-line-height;
+    color: lighten(@article-meta-color, 15%);
+}
+
+/*
+ * Spacing for subnav
+ */
+
+.tm-subnav { margin-top: 70px; }
+
+/* Tablets portrait and smaller*/
+@media (max-width: @breakpoint-medium) {
+
+    .tm-subnav { margin-top: 0; }
+
+}
+
+/*
+ * Pagination
+ */
+
+/* Phone landscape and bigger */
+@media (min-width: @breakpoint-medium) {
+
+    .tm-main .uk-pagination {
+        margin-top: (@block-padding-vertical-large / 2);
+        margin-bottom: -(@block-padding-vertical-large / 2);
+    }
+
 }

@@ -7,23 +7,31 @@
 // Variables
 // ========================================================================
 
-@article-margin-top:                            80px;
+@article-margin-top:                            60px;
 
-@article-title-font-size:                       round((@global-font-size * 2.6)); // 36px / 42px
-@article-title-line-height:                     round((@article-title-font-size * 1.154)); // 42px / 48px
+@article-title-font-size:                       30px;
+@article-title-line-height:                     40px;
 @article-title-font-weight:                     300;
+@article-title-text-transform:                  uppercase;
 
 @article-meta-font-size:                        round((@global-font-size * 0.85)); // 12px / 14px
 @article-meta-line-height:                      round((@article-meta-font-size * 1.46)); // 18px / 20px
 @article-meta-color:                            @global-muted-color;
 
-@article-lead-color:                            @global-color;
-@article-lead-font-size:                        18px;
-@article-lead-line-height:                      28px;
+@article-lead-color:                            @global-dark-color;
+@article-lead-font-size:                        round((@global-font-size * 1.06)); // 17px
+@article-lead-line-height:                      round((@article-lead-font-size * 1.47)); // 27px
 @article-lead-font-weight:                      300;
 
 @article-divider-margin:                        @global-margin-large;
 @article-divider-border:                        @global-border;
+
+//
+// New
+//
+
+@article-title-hover-color:                     lighten(@global-dark-color, 30%);
+@article-large-margin-top:                      90px;
 
 
 // Sub-object `uk-article-title`
@@ -64,9 +72,18 @@
 
 .hook-article-misc() {
 
-    .uk-article-title a:hover { border-bottom: 1px solid @global-color; }
+    .uk-article-title a {
+        -webkit-transition: color .2s ease;
+        transition: color .2s ease;
+    }
 
-    .uk-article .uk-subnav a:hover,
-    .uk-article .uk-subnav a:focus { text-decoration: underline; }
+    .uk-article-title a:hover { color: @article-title-hover-color; }
+
+    /* Tablet and bigger */
+    @media (min-width: @breakpoint-medium) {
+
+        .uk-article + .uk-article { margin-top: @article-large-margin-top; }
+
+    }
 
 }

@@ -17,14 +17,20 @@
 // New
 //
 
-@overlay-button-border:                         @global-contrast-color;
-@overlay-button-color:                          @global-contrast-color;
+@overlay-button-background:                     @global-contrast-color;
+@overlay-button-color:                          @global-dark-color;
 
-@overlay-button-hover-border:                   #333;
-@overlay-button-active-color:                   @global-contrast-color;
+@overlay-button-hover-border:                   @global-contrast-color;
+@overlay-button-hover-background:               transparent;
+@overlay-button-hover-color:                    @global-contrast-color;
 
+@overlay-icon-button-border:                    @global-contrast-color;
+@overlay-icon-button-background:                transparent;
 @overlay-icon-button-color:                     @global-contrast-color;
-@overlay-icon-button-active-background:         @overlay-button-hover-border;
+
+@overlay-icon-button-hover-border:              @global-contrast-color;
+@overlay-icon-button-hover-background:          @global-contrast-color;
+@overlay-icon-button-hover-color:               @global-dark-color;
 
 
 // Sub-object `uk-overlay-panel`
@@ -34,25 +40,31 @@
 
     // Button
     .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger) {
-        border-color: @overlay-button-border;
+        background: @overlay-button-background;
         color: @overlay-button-color;
     }
 
-    .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger):hover { border-color: @overlay-button-hover-border; }
-
+    .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger):hover,
     .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger):active,
-    .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger).uk-active,
-        .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger):focus {
+    .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger):focus {
         border-color: @overlay-button-hover-border;
-        color: @overlay-button-active-color;
+        background: @overlay-button-hover-background;
+        color: @overlay-button-hover-color;
     }
 
-     // Icon Button
-    .uk-icon-button { color: @overlay-icon-button-color; }
+    // Icon Button
+    .uk-icon-button {
 
-    .uk-icon-button:active {
-        background: @overlay-icon-button-active-background;
-        border-color: @overlay-icon-button-active-background;
+        border-color: @overlay-icon-button-border;
+        background: @overlay-icon-button-background;
+        color: @overlay-icon-button-color;
+
+        &:hover,
+        &:active {
+            border-color: @overlay-icon-button-hover-border;
+            background: @overlay-icon-button-hover-background;
+            color: @overlay-icon-button-hover-color;
+        }
 
     }
 

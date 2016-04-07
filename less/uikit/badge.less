@@ -18,18 +18,15 @@
 @badge-notification-font-size:                  round((@global-font-size * 0.78)); // 11px / 12px
 @badge-notification-line-height:                round((@badge-notification-font-size * 1.81)); // 20px / 22px
 
-@badge-success-background:                      @global-success-background;
-@badge-warning-background:                      @global-warning-background;
-@badge-danger-background:                       @global-danger-background;
+@badge-success-background:                      transparent;
+@badge-warning-background:                      transparent;
+@badge-danger-background:                       transparent;
 
 
 // Component
 // ========================================================================
 
-.hook-badge() {
-    border-bottom: 2px solid transparent;
-    background: transparent;
-}
+.hook-badge() { border-bottom: 2px solid transparent; }
 
 
 // Color modifier
@@ -41,7 +38,6 @@
 
 .hook-badge-success() {
     border-bottom-color: @global-success-background;
-    background: transparent;
     color: @global-dark-color;
 }
 
@@ -51,7 +47,6 @@
 
 .hook-badge-warning() {
     border-bottom-color: @global-warning-background;
-    background: transparent;
     color: @global-dark-color;
 }
 
@@ -61,7 +56,6 @@
 
 .hook-badge-danger() {
     border-bottom-color: @global-danger-background;
-    background: transparent;
     color: @global-dark-color;
 }
 
